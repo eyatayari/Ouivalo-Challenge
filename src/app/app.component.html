@@ -1,0 +1,20 @@
+<h1>Ouivalo Challenge Form</h1>
+<div class="container"
+     fxLayout="row"
+     fxLayout.sm="column"
+     fxLayout.xs="column"
+     fxLayoutAlign.gt-md="space-around center"
+     fxLayoutGap="10px">
+
+    
+<form #userPost="ngForm" (ngSubmit)="OnSubmit(userPost.value)"> 
+  <input type="text" name="name" ngModel placeholder="name"><br><br>
+  <input type="text" name="address" ngModel placeholder="address"><br><br>
+  <input type="text" name="email" ngModel placeholder="email"><br><br>
+  <input type="text" name="number" ngModel placeholder="phone number"><br><br>
+  <input type="text" name="City" ngModel placeholder="City"><br><br>
+  <button type="submit">Submit</button>
+
+
+</form>
+</div>

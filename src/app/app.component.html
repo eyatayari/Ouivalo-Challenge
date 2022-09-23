@@ -5,16 +5,12 @@
      fxLayout.xs="column"
      fxLayoutAlign.gt-md="space-around center"
      fxLayoutGap="10px">
-
     
-<form #userPost="ngForm" (ngSubmit)="OnSubmit(userPost.value)"> 
-  <input type="text" name="name" ngModel placeholder="name"><br><br>
-  <input type="text" name="address" ngModel placeholder="address"><br><br>
-  <input type="text" name="email" ngModel placeholder="email"><br><br>
-  <input type="text" name="number" ngModel placeholder="phone number"><br><br>
-  <input type="text" name="City" ngModel placeholder="City"><br><br>
+<form #userPost="ngForm" (ngSubmit)="handleSubmit(userPost.value)"> 
+  <input type="date" name="date" ngModel><br><br>
+  <input type="text" name="id" ngModel placeholder="email"><br><br>
+  <input type="text" name="urlRelais" ngModel placeholder="lien github"><br><br>
+  <input type="textarea" name="message" ngModel placeholder="message"><br><br>
   <button type="submit">Submit</button>
-
-
 </form>
 </div>

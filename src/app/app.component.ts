@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import{HttpClient}from '@angular/common/http'
+import{HttpClient,HttpHeaders,HttpRequest}from '@angular/common/http'
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -13,10 +14,29 @@ export class AppComponent {
   
  
   OnSubmit(data:any){
-    data.id="eya"
-   // this.http.post("http://localhost:4200/contactus",data).subscribe((result) => {
-      console.warn(data);
+    
+    const optionRequete = {
+      headers: new HttpHeaders({ 
+        'Access-Control-Allow-Origin':'*',
+        
+      })
+    };
+console.log(data);
+  this.http.post("https://script.google.com/macros/s/AKfycby-TJmFFUFTfiNUbMoSIZx8LVtiskQ-bUt4xO6hmrU0XQpJS8IPUBow/exec",{
 
- // });
+    'cle':'CLE-TEST-IOT',
+    'donnees':{
+      'id':'eya.tayari@outlook.com',
+      'date':'23/09/2022',
+      'urlRelais':'https://github.com/eyatayari/Ouivalo-Challenge',
+    },data
+  }, optionRequete).subscribe((result) => {
+      console.log(result);
+
+  });
+
+this.http.post("http://localhost:4200",data, optionRequete);
+console.log(this.http.request.arguments);
+  }
 }
-}
+
